@@ -48,7 +48,6 @@ User Question: {query}
 Incident Data:
 {tool_result}
 
-Explain the root cause clearly.
 """
 
         final_answer = llm(final_prompt)[0]["generated_text"]
