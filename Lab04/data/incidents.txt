@@ -1,0 +1,14 @@
+Incident: Payment Gateway Timeout
+Date: 2023-07-12
+Root Cause: Downstream banking API timeout.
+Impact: Payment retries increased.
+
+Incident: Login Service Failure
+Date: 2023-09-02
+Root Cause: Redis cache failure.
+Impact: Users unable to login for 15 minutes.
+
+Incident: Checkout Latency Spike
+Date: 2023-11-21
+Root Cause: Database connection pool exhaustion.
+Impact: Checkout delay for premium users.

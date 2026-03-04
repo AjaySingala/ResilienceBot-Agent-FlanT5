@@ -1,0 +1,16 @@
+2023-07-12 10:01:22 INFO Payment service started
+2023-07-12 10:02:01 ERROR Payment gateway timeout
+2023-07-12 10:02:10 ERROR Payment gateway timeout
+2023-07-12 10:02:21 ERROR Payment gateway timeout
+2023-07-12 10:03:05 WARN Retry attempt
+
+2023-09-02 09:10:02 INFO Login service started
+2023-09-02 09:11:12 ERROR Redis connection lost
+2023-09-02 09:11:19 ERROR Redis connection lost
+2023-09-02 09:11:30 ERROR Redis connection lost
+2023-09-02 09:12:02 INFO Redis recovered
+
+2023-11-21 15:21:03 INFO Checkout service started
+2023-11-21 15:22:10 ERROR DB connection pool exhausted
+2023-11-21 15:22:15 ERROR DB connection pool exhausted
+2023-11-21 15:22:30 ERROR DB connection pool exhausted
