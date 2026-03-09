@@ -1,5 +1,11 @@
+#
+# Convert RAG Flow into a Simple Agent
+#
+
 import os
+# Import Agent.
 from agent import run_agent
+# Import Vector Database Builder.
 from rag_index import build_vector_store
 
 # Set env vars from config.py.
@@ -25,13 +31,15 @@ print("ResilienceBot Ready")
 print("Building vector database...")
 build_vector_store()
 
+# Start Interactive Chat Loop.
 while True:
-
+    # Ask User for Input.
     query = input("\nAsk ('exit' to Stop): ")
 
     if query.lower() == "exit":
         break
 
+    # Run the Agent.
     answer = run_agent(query)
 
     print("\nResilienceBot:\n", answer)

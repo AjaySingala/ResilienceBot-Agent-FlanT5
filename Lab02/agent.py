@@ -5,6 +5,7 @@ import torch
 
 print("Loading FLAN-T5 model...")
 
+# Load the model.
 model_name = "google/flan-t5-base"
 
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -14,8 +15,11 @@ print("Model loaded.")
 
 def llm_generate(prompt):
 
+    # Tokenize the prompt.
+    # "pt" converts the prompt into PyTorch tensors.
     inputs = tokenizer(prompt, return_tensors="pt")
 
+    # Generate response.
     outputs = model.generate(
         **inputs,
         max_new_tokens=120,
@@ -23,8 +27,10 @@ def llm_generate(prompt):
         do_sample=True
     )
 
+    # Decode tokens.
     return tokenizer.decode(outputs[0], skip_special_tokens=True)
 
+# Tool Selection Logic.
 def choose_tool(question):
 
     q = question.lower()
@@ -41,6 +47,7 @@ def choose_tool(question):
 
 def run_agent(query):
 
+    # Choose Tool.
     tool = choose_tool(query)
     print("Agent Decision →", tool.upper())
 

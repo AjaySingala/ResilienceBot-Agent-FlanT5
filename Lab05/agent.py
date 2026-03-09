@@ -12,7 +12,9 @@ model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
 
 print("Model loaded.")
 
+#
 # Safe tool call with retries and error handling.
+#
 def safe_tool_call(tool_func, tool_name, args, retries=2):
     for attempt in range(retries):
         try:
@@ -137,6 +139,7 @@ def run_agent(query):
             sql = generate_sql(query)
             print("Running SQL step")
 
+            # Replace direct tool call with safe_tool_call.
             # result = sql_query.invoke({"query": sql})
             # sql_data = result
             sql_data = safe_tool_call(
@@ -147,6 +150,7 @@ def run_agent(query):
         elif step == "log":
             print("Analyzing logs")
 
+            # Replace direct tool call with safe_tool_call.
             # result = log_search.invoke({"query": query})
             # log_data = result
             log_data = safe_tool_call(
@@ -156,7 +160,8 @@ def run_agent(query):
             )
         elif step == "rag":
             print("Searching incident knowledge base")
-            
+
+            # Replace direct tool call with safe_tool_call.            
             # result = incident_search.invoke({"query": query})
             # rag_data = result
             rag_data = safe_tool_call(

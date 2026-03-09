@@ -60,6 +60,7 @@ def generate_sql(question):
 
 # -----------------------------
 # Agent Planning
+# Add a planning step to the agent.
 # -----------------------------
 def plan_steps(question):
     q = question.lower()
@@ -112,6 +113,7 @@ Explanation:
 # Main Agent Execution
 # -----------------------------
 def run_agent(query):
+    # Plan the steps based on the query.
     steps = plan_steps(query)
     print("Agent Plan →", " → ".join(steps).upper())
 
@@ -119,6 +121,7 @@ def run_agent(query):
     log_data = ""
     rag_data = ""
 
+    # Execute the planned steps and collect evidence.
     for step in steps:
         if step == "sql":
             sql = generate_sql(query)
