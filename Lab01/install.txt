@@ -4,5 +4,3 @@ pip install langchain langchain-community langgraph
 pip install langchain-text-splitters langchain-huggingface 
 pip install langchain-chroma chromadb 
 pip install sentence-transformers transformers torch
-
-pip install tabulate

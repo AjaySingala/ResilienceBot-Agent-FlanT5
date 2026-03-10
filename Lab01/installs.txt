@@ -1,3 +1,0 @@
-pip install langchain langchain-community langgraph langchain-text-splitters langchain-huggingface 
-pip install langchain-chroma chromadb 
-pip install sentence-transformers transformers torch
